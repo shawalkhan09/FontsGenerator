@@ -3,91 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colors and Fonts Generator</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
 </head>
 <body>
-    <header>
-        <h1>Colors and Fonts Generator</h1>
-        <nav>
-            <!-- Navigation links can be added here -->
-        </nav>
-    </header>
-    
-    <main>
-        <!-- color generator section -->
-        <section id="color-generator">
-            <div class="color-generator-header">
-                <h2>Color Generator</h2>
-            </div>
-            <div class="color-scheme-controls">
-                <label for="color-scheme">Select Color Scheme:</label>
-                <select id="color-scheme">
-                    <option value="random">Random</option>
-                    <option value="monochromatic">Monochromatic</option>
-                    <option value="complementary">Complementary</option>
-                    <option value="triadic">Triadic</option>
-                    <option value="analogous">Analogous</option>
-                </select>
-                <button id="generate-palette">Generate Palette</button>
-            </div>
-            <div id="colors-container">
-                <!-- Color boxes will be dynamically generated here -->
-            </div>
-            <button id="copy-palette" class="copy-palette-button">Copy Palette</button>
-        </section>
-        
-        <!-- font generator section -->
-        <section id="fonts-generator">
-            <h2>Fonts Generator</h2>
-            <div class="font-controls">
-                <div class="font-selection">
-                    <div class="font-group">
-                        <label for="primary-font">Primary Font:</label>
-                        <select id="primary-font"></select>
-                    </div>
-                    <div class="font-group">
-                        <label for="secondary-font">Secondary Font:</label>
-                        <select id="secondary-font"></select>
-                    </div>
+    <!-- font generator section -->
+    <section id="fonts-generator">
+        <h2>Fonts Generator</h2>
+        <div class="font-controls">
+            <div class="font-selection">
+                <div class="font-group">
+                    <label for="primary-font">Primary Font:</label>
+                    <select id="primary-font"></select>
                 </div>
-                <div class="font-actions">
-                    <button id="generate-pair">Generate Pair</button>
-                    <button id="copy-styles">Copy Styles</button>
+                <div class="font-group">
+                    <label for="secondary-font">Secondary Font:</label>
+                    <select id="secondary-font"></select>
                 </div>
             </div>
-            <div class="preview-controls">
+            <div class="font-actions">
+                <button id="generate-pair">Generate Pair</button>
+                <button id="copy-styles">Copy Styles</button>
+            </div>
+        </div>
+        <div class="preview-controls">
+            <div class="color-control">
                 <label for="background-color">Background:</label>
                 <input type="color" id="background-color" value="#ffffff">
+            </div>
+            <div class="color-control">
                 <label for="text-color">Text Color:</label>
                 <input type="color" id="text-color" value="#000000">
             </div>
-            <div id="font-preview">
-                <div class="preview-area">
-                    <h1 class="primary-font">Primary Font Heading</h1>
-                    <p class="secondary-font">This is a paragraph in the secondary font. It demonstrates how the two fonts work together in a real-world scenario. The quick brown fox jumps over the lazy dog.</p>
-                    <h2 class="primary-font">Secondary Heading</h2>
-                    <p class="secondary-font">Another paragraph showcasing the secondary font. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="custom-text-control">
+                <label for="custom-text">Custom Text:</label>
+                <input type="text" id="custom-text" placeholder="Enter your custom text here">
+            </div>
+        </div>
+        <div id="font-preview">
+            <div class="preview-area">
+                <div class="preview-section">
+                    <!-- <i class="copy-icon fas fa-copy" aria-label="Copy primary font text"></i> -->
+                    <h3>Primary Font</h3>
+                    <h2 class="primary-font">Primary Font Heading</h2>
+                    <p class="primary-font">This is a paragraph in the primary font. It demonstrates how the primary font looks in both heading and body text. The quick brown fox jumps over the lazy dog.</p>
+                </div>
+                <div class="preview-section">
+                    <!-- <i class="copy-icon fas fa-copy" aria-label="Copy secondary font text"></i> -->
+                    <h3>Secondary Font</h3>
+                    <h2 class="secondary-font">Secondary Font Heading</h2>
+                    <p class="secondary-font">This is a paragraph in the secondary font. It shows how the secondary font appears in both heading and body text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
             </div>
+        </div>
+        <div id="suggested-pairs">
             <div id="suggested-pairs">
-                <h3>Suggested Pairings</h3>
-                <div class="pair-suggestions"></div>
+                <div class="suggested-pairs-header">
+                    <h3>Suggested Pairings</h3>
+                    <i class="refresh-icon fas fa-sync-alt" aria-label="Refresh suggested pairs"></i>
+                </div>
+                <div class="pair-suggestions">
+                    <!-- This will be dynamically populated by JavaScript -->
+                </div>
             </div>
-        </section>
-        
-        <!-- <section id="preview-area">
-            <h2>Preview</h2>
-            Preview area will display selected colors and fonts
-        </section> -->
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Colors and Fonts Generator. All rights reserved.</p>
-        <!-- Additional links or credits can go here -->
-    </footer>
-    
+        </div>
+    </section>
+
     <script src="script.js"></script>
 </body>
 </html>
