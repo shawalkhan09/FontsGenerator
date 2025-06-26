@@ -1,0 +1,321 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+/* Color Generator Section Styles */
+
+#color-generator {
+    background-color: #ffffff; /* White background for contrast */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Limit width for better appearance */
+    margin: 20px auto; /* Center the section */
+}
+
+.color-generator-header {
+    text-align: center; /* Center the header text */
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em; /* Larger font size for the header */
+    color: #333; /* Dark color for the header */
+}
+
+.color-scheme-controls {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
+    margin-bottom: 20px;
+}
+
+.color-scheme-controls label {
+    font-weight: bold;
+    margin-bottom: 10px; /* Space below the label */
+    color: #555; /* Medium gray color */
+}
+
+#color-scheme {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%; /* Full width */
+    max-width: 300px; /* Limit width */
+    transition: border-color 0.3s;
+}
+
+#color-scheme:hover, #color-scheme:focus {
+    border-color: #4CAF50; /* Change border color on hover/focus */
+    outline: none;
+}
+
+#generate-palette {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Space above the button */
+}
+
+#generate-palette:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Colors Container Styles */
+#colors-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 20px;
+}
+
+/* Color Box Styles */
+.color-box {
+    position: relative; /* Position relative for absolute positioning of the copy button */
+    margin: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.color-display {
+    width: 166px;
+    height: 150px;
+    cursor: pointer;
+    position: relative;
+}
+
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.custom-alert.fade-out {
+    opacity: 0;
+}
+
+.copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.copy-button:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.copy-palette-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.copy-palette-button:hover {
+    background-color: #45a049;
+}
+
+.copy-palette-button:active {
+    background-color: #3e8e41;
+}
+
+/* Color Info Styles */
+.color-info {
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+.color-code {
+    font-family: monospace;
+    font-size: 14px;
+}
+
+/* font generator section */
+
+#fonts-generator {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.font-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.font-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex: 1;
+}
+
+.font-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.font-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.font-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.font-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#generate-pair {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#generate-pair:hover {
+    background-color: #45a049;
+}
+
+#copy-styles {
+    background-color: #2196F3;
+    color: white;
+}
+
+#copy-styles:hover {
+    background-color: #1976D2;
+}
+
+.preview-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.preview-controls label {
+    color: #555;
+}
+
+.preview-controls input[type="color"] {
+    padding: 0;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#font-preview {
+    margin-bottom: 2rem;
+}
+
+.preview-area {
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#suggested-pairs h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.pair-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.suggested-pair {
+    flex: 1;
+    min-width: 200px;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.suggested-pair:hover {
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .font-controls, .font-selection, .font-actions {
+        flex-direction: column;
+    }
+    
+    .preview-controls {
+        flex-wrap: wrap;
+    }
+}
+
+/* footer style */
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
